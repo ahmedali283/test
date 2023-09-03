@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Results</title>
+</head>
+<body>
+  <a href="#" class="title-link">Link 1</a>
+    <a href="#" class="title-link">Link 2</a>
+    <a href="#" class="title-link">Link 3</a>
+
+  <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const titleLinks = document.querySelectorAll(".button");
+
+    // Add click event listener to each link
+    titleLinks.forEach(function(link, index) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            // Get the topic ID based on the link's position
+            const topicId = index + 1;
+
+            // Save the topic ID in local storage
+            localStorage.setItem("topicId", topicId);
+
+            console.log(`Topic ID ${topicId} saved in local storage.`);
+        });
+    });
+});
+
+
+  </script>
+</body>
+</html>
